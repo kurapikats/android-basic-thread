@@ -32,9 +32,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonStop.setOnClickListener(this);
 
         /**
-           This is a basic app that creates a sub thread that updates the main UI
+           This app creates a sub thread that updates the main UI
 
-           Notes: You can't update UI from a sub thread directly
+           Notes: You can't update UI from a sub thread directly.
            You need to use Handler.
            Initialize Handler with reference to Main Looper (UI Thread)
            Handler needs to post a task with a Runnable instance
@@ -65,7 +65,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                     txtCounter.setText(" " + count);
                                 }
                             });
-                            Log.i(TAG, "Thread id in while loop: " + count + " - " + Thread.currentThread().getId());
+                            Log.i(TAG, "Thread in while loop - Thread ID : " +
+                                    Thread.currentThread().getId() + " -  Counter: " + count);
                         }
                     }
                 }).start();
